@@ -29,8 +29,8 @@ jobs:
         uses: actions/checkout@v4
         # each step has a name, and either a command (like run) or
         # leverage an existing pre-made step like pnpm/action-setup
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
+      - name: Install npm
+        uses: npm/action-setup@v2
         with:
           version: 8
           run_install: false
@@ -41,11 +41,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "18"
-          cache: "pnpm"
+          cache: "npm"
       - name: Install dependencies
-        run: pnpm install
+        run: npm install
       - name: Build Application
-        run: pnpm build
+        run: npm build
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
         with:
