@@ -1,0 +1,12 @@
+wservices:
+  app:
+    build:
+      context: .
+    container_name: app
+    restart: unless-stopped
+    init: true
+    ports:
+      - "4173:4173" # Vite preview server
+    # env_file: ./.env  # Uncomment if .env file exists
+    # No external dependencies detected from README or source files
+    # If you add a database or other service, add it here and set depends_on accordingly
